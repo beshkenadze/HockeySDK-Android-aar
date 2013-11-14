@@ -1,0 +1,35 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.6+'
+    }
+}
+
+apply plugin: 'android-library'
+apply plugin: 'maven'
+
+version '3.0.1'
+group 'net.hockeyapp.android'
+
+android {
+    sourceSets {
+        main {
+            manifest.srcFile 'HockeySDK-Android/AndroidManifest.xml'
+            java.srcDirs = ['HockeySDK-Android/src']
+            res.srcDirs = ['HockeySDK-Android/res']
+        }
+    }
+    buildToolsVersion "17.0"
+    compileSdkVersion 17
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "file://"+System.getProperty("user.home")+"/.m2/repository")
+        }
+    }
+}

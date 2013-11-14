@@ -1,0 +1,3 @@
+[submodule "HockeySDK-Android"]
+	path = HockeySDK-Android
+	url = git@github.com:bitstadium/HockeySDK-Android.git
